@@ -1,158 +1,463 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Леся — телесный сексолог</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Georgia, serif;
-      background: #f7f1ec;
-      color: #3d2b2b;
-      scroll-behavior: smooth;
-    }
-    header {
-      padding: 2em;
-      text-align: center;
-      background: #f0e6e0;
-      animation: fadeInUp 1s ease forwards;
-    }
-    .lang-switch {
-      position: absolute;
-      top: 1em;
-      right: 1em;
-    }
-    .section {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 3em 2em;
-      animation: fadeInUp 1s ease forwards;
-    }
-    .cta {
-      background: #d8b8a8;
-      color: white;
-      text-align: center;
-      padding: 2em;
-      animation: fadeInUp 1s ease forwards;
-    }
-    .cta a {
-      background: white;
-      color: #3d2b2b;
-      padding: 1em 2em;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .cta a:hover {
-      background: #f7e6dd;
-      transform: scale(1.05);
-    }
-    .testimonial {
-      font-style: italic;
-      border-left: 4px solid #cba;
-      margin: 1.5em 0;
-      padding-left: 1em;
-    }
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 1.5em;
-      margin-top: 1em;
-    }
-    .social-icons a {
-      color: #3d2b2b;
-      font-size: 1.5em;
-      text-decoration: none;
-      transition: color 0.3s, transform 0.3s;
-    }
-    .social-icons a:hover {
-      color: #b0725e;
-      transform: scale(1.1);
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesia — телесний сексолог</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dusty-pink: #e8c4c4;
+            --soft-nude: #f5e1da;
+            --warm-beige: #f7d9c4;
+            --gentle-gold: #d4b483;
+            --deep-pink: #d8a7a7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #faf7f5;
+            color: #5a4a42;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+        
+        .curved-shape {
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        }
+        
+        .breathing-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, var(--soft-nude) 0%, var(--warm-beige) 100%);
+            animation: breath 15s infinite ease-in-out;
+            opacity: 0.3;
+        }
+        
+        @keyframes breath {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.05); opacity: 0.4; }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .quote-icon {
+            color: var(--gentle-gold);
+            opacity: 0.7;
+        }
+        
+        .btn-gold {
+            background: linear-gradient(to right, var(--gentle-gold), #e6c28a);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gentle-gold), transparent);
+        }
+        
+        .testimonial-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .embossed {
+            box-shadow: inset 3px 3px 5px rgba(0,0,0,0.05),
+                        inset -3px -3px 5px rgba(255,255,255,0.8);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0px rgba(212, 180, 131, 0.5); }
+            100% { box-shadow: 0 0 0 20px rgba(212, 180, 131, 0); }
+        }
+    </style>
 </head>
 <body>
-  <div class="lang-switch">
-    <select onchange="changeLanguage(this.value)">
-      <option value="ru" selected>Русский</option>
-      <option value="ua">Українська</option>
-      <option value="en">English</option>
-    </select>
-  </div>
+    <!-- Breathing background animation -->
+    <div class="breathing-bg"></div>
+    
+    <!-- Header -->
+    <header class="fixed w-full z-50 py-5 px-4 md:px-10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-[#d4b483] to-[#e6c28a] mr-3"></div>
+                <h1 class="text-xl md:text-2xl font-semibold text-[#5a4a42]">Леся <span class="font-light">— телесний сексолог</span></h1>
+            </div>
+            <div class="ml-6 relative group">
+                <button class="flex items-center px-3 py-1 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75 transition">
+                    <span class="mr-2">UA</span>
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </button>
+                <div class="absolute right-0 mt-2 w-24 bg-white rounded-md shadow-lg hidden group-hover:block">
+                    <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100" onclick="translatePage('uk'); return false;">Українська</a>
+                    <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100" onclick="translatePage('ru'); return false;">Русский</a>
+                    <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100" onclick="translatePage('en'); return false;">English</a>
+                </div>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#about" class="text-[#5a4a42] hover:text-[#d4b483] transition-colors">Про мене</a></li>
+                    <li><a href="#approach" class="text-[#5a4a42] hover:text-[#d4b483] transition-colors">Підхід</a></li>
+                    <li><a href="#testimonials" class="text-[#5a4a42] hover:text-[#d4b483] transition-colors">Відгуки</a></li>
+                    <li><a href="#contact" class="text-[#5a4a42] hover:text-[#d4b483] transition-colors">Контакти</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-[#5a4a42]">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
 
-  <header>
-    <h1 data-i18n="title">Леся — телесный сексолог</h1>
-    <p data-i18n="subtitle">О теле, чувствах и живой близости</p>
-  </header>
+    <!-- Hero Section -->
+    <section class="hero-section min-h-screen flex items-center pt-16 px-4 md:px-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="text-center md:text-left">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 text-[#5a4a42]">Поверніться до свого тіла</h2>
+                <p class="text-xl mb-8 text-[#7a6a62] max-w-lg mx-auto md:mx-0">Допомога у відновленні зв'язку з тілом, емоціями та інтимністю через сексуальну терапію</p>
+                <a href="#contact" class="btn-gold text-white font-medium py-3 px-8 rounded-full inline-block text-lg">Записатися на сесію</a>
+            </div>
+            <div class="relative flex justify-center">
+                <div class="relative curved-shape overflow-hidden w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 floating">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#f5e1da] to-[#e8c4c4]"></div>
+                    <div class="absolute inset-4 bg-[url('https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80')] bg-cover bg-center curved-shape"></div>
+                </div>
+                <div class="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-[#d4b483] opacity-20"></div>
+                <div class="absolute -top-6 -left-6 w-16 h-16 rounded-full bg-[#e8c4c4] opacity-30"></div>
+            </div>
+        </div>
+    </section>
 
-  <section class="section">
-    <h2 data-i18n="about_title">Обо мне</h2>
-    <p data-i18n="about_text">
-      Я — Леся, телесный сексолог и проводница в мир чуткости, телесного согласия и чувственного присутствия. Работаю с темами доверия, стыда, удовольствия и границ. Моя практика основана на уважении к телу и его мудрости.
-    </p>
-    <div class="social-icons">
-      <a href="https://t.me/lesiafeels" title="Telegram" target="_blank"><i class="fab fa-telegram"></i></a>
-      <a href="https://www.instagram.com/lesiapsy" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 md:px-10 bg-[#fcfaf8]">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-[#5a4a42]">Про мене</h2>
+            <div class="section-divider w-32 h-px mx-auto my-8"></div>
+            <p class="text-lg mb-8 text-[#7a6a62]">Я — телесний сексолог з більш ніж 8-річним досвідом роботи. Моя місія — допомагати людям відновити зв'язок зі своїм тілом, розкрити свою сексуальність і побудувати здорові стосунки з собою та іншими.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                <div class="embossed p-8 rounded-2xl bg-[#faf7f5]">
+                    <div class="w-16 h-16 rounded-full bg-[#f5e1da] flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-hands text-2xl text-[#d4b483]"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Тілесність</h3>
+                    <p class="text-[#7a6a62]">Допомога у відчутті тіла, його потреб та сигналів через практики усвідомленості та соматичні вправи.</p>
+                </div>
+                
+                <div class="embossed p-8 rounded-2xl bg-[#faf7f5]">
+                    <div class="w-16 h-16 rounded-full bg-[#f5e1da] flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-2xl text-[#d4b483]"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Емоції</h3>
+                    <p class="text-[#7a6a62]">Робота з емоційними блоками, травмами та стереотипами, що заважають жити повноцінним життям.</p>
+                </div>
+                
+                <div class="embossed p-8 rounded-2xl bg-[#faf7f5]">
+                    <div class="w-16 h-16 rounded-full bg-[#f5e1da] flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-hand-holding-heart text-2xl text-[#d4b483]"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Інтимність</h3>
+                    <p class="text-[#7a6a62]">Побудова здорової інтимності, що ґрунтується на взаємній згоді, довірі та повазі.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="section">
-    <h2 data-i18n="testimonials_title">Отзывы</h2>
-    <div class="testimonial" data-i18n="testimonial_1">“Сессия с Лесей — это как вернуться домой в собственное тело. Очень бережно и глубоко.”</div>
-    <div class="testimonial" data-i18n="testimonial_2">“Я впервые почувствовала, что могу говорить о желаниях и страхах без стыда.”</div>
-    <div class="testimonial" data-i18n="testimonial_3">“Просто спасибо. Это было настоящее волшебство.”</div>
-  </section>
+    <!-- Approach Section -->
+    <section id="approach" class="py-20 px-4 md:px-10">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-[#5a4a42]">Мій підхід</h2>
+                <div class="section-divider w-32 h-px mx-auto my-8"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="space-y-8">
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-6">
+                                <div class="w-12 h-12 rounded-full bg-[#f5e1da] flex items-center justify-center">
+                                    <i class="fas fa-seedling text-lg text-[#d4b483]"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Безпечний простір</h3>
+                                <p class="text-[#7a6a62]">Створення довірчого, безоціночного середовища, де ви можете бути собою без страху чи сорому.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-6">
+                                <div class="w-12 h-12 rounded-full bg-[#f5e1da] flex items-center justify-center">
+                                    <i class="fas fa-user text-lg text-[#d4b483]"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Індивідуальний підхід</h3>
+                                <p class="text-[#7a6a62]">Кожна людина унікальна, тому програма роботи формується індивідуально під ваші потреби.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-6">
+                                <div class="w-12 h-12 rounded-full bg-[#f5e1da] flex items-center justify-center">
+                                    <i class="fas fa-brain text-lg text-[#d4b483]"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Тіло-розум</h3>
+                                <p class="text-[#7a6a62]">Інтеграція психологічних методів з тілесними практиками для глибокої трансформації.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2 relative">
+                    <div class="curved-shape overflow-hidden w-full h-80 md:h-96 bg-gradient-to-br from-[#f5e1da] to-[#e8c4c4]"></div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-[#d4b483] opacity-20"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="cta">
-    <h2 data-i18n="cta_title">Готовы начать?</h2>
-    <p data-i18n="cta_text">Запишитесь на сессию через Telegram</p>
-    <a href="https://t.me/lesiafeels" target="_blank">@lesiafeels</a>
-  </section>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 px-4 md:px-10 bg-[#fcfaf8]">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-[#5a4a42]">Відгуки клієнтів</h2>
+                <div class="section-divider w-32 h-px mx-auto my-8"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card embossed p-6 rounded-2xl bg-[#faf7f5]">
+                    <div class="quote-icon text-4xl mb-4">“</div>
+                    <p class="text-[#7a6a62] italic mb-4">Сесії з Лесею допомогли мені відчути своє тіло по-новому. Я навчилася чути його та довіряти йому.</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 mr-3"></div>
+                        <div>
+                            <p class="font-medium">Олена, 34</p>
+                            <p class="text-sm text-[#d4b483]">Київ</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card embossed p-6 rounded-2xl bg-[#faf7f5]">
+                    <div class="quote-icon text-4xl mb-4">“</div>
+                    <p class="text-[#7a6a62] italic mb-4">Дякую за безпечний простір та професійний підхід. Змогла подолати страхи, що переслідували мене роками.</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 mr-3"></div>
+                        <div>
+                            <p class="font-medium">Марія, 29</p>
+                            <p class="text-sm text-[#d4b483]">Львів</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card embossed p-6 rounded-2xl bg-[#faf7f5]">
+                    <div class="quote-icon text-4xl mb-4">“</div>
+                    <p class="text-[#7a6a62] italic mb-4">Робота з Лесею змінила моє ставлення до себе та своєї сексуальності. Це був важливий крок до любові до себе.</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 mr-3"></div>
+                        <div>
+                            <p class="font-medium">Андрій, 41</p>
+                            <p class="text-sm text-[#d4b483]">Одеса</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    const translations = {
-      ua: {
-        title: "Леся — тілесна сексологиня",
-        subtitle: "Про тіло, почуття та живу близькість",
-        about_title: "Про мене",
-        about_text: "Я — Леся, тілесна сексологиня і провідниця в світ чутливості, тілесної згоди та присутності...",
-        testimonials_title: "Відгуки",
-        testimonial_1: "Сесія з Лесею — це як повернення додому в власне тіло. Дуже дбайливо і глибоко.",
-        testimonial_2: "Я вперше відчула, що можу говорити про бажання і страхи без сорому.",
-        testimonial_3: "Просто дякую. Це було справжнє чарівництво.",
-        cta_title: "Готові почати?",
-        cta_text: "Запишіться на сесію через Telegram"
-      },
-      en: {
-        title: "Lesia — Somatic Sexologist",
-        subtitle: "About the body, feelings and intimate presence",
-        about_title: "About me",
-        about_text: "I'm Lesia, a somatic sexologist guiding people into sensitivity, embodied consent and sensual presence...",
-        testimonials_title: "Testimonials",
-        testimonial_1: "A session with Lesia feels like coming home to your own body. Gentle and deep.",
-        testimonial_2: "For the first time I felt I could talk about my desires and fears without shame.",
-        testimonial_3: "Thank you. That was true magic.",
-        cta_title: "Ready to begin?",
-        cta_text: "Book a session via Telegram"
-      }
-    };
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 px-4 md:px-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="bg-gradient-to-br from-[#f5e1da] to-[#e8c4c4] rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                <div class="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#d4b483] opacity-10"></div>
+                <div class="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#d4b483] opacity-10"></div>
+                
+                <h2 class="text-3xl md:text-4xl font-semibold mb-6 text-[#5a4a42]">Готові розпочати подорож до себе?</h2>
+                <p class="text-lg mb-8 text-[#7a6a62] max-w-2xl mx-auto">Запишіться на першу консультацію та дізнайтесь, як сексуальна терапія може допомогти саме вам.</p>
+                
+                <a href="https://t.me/lesiafeels" target="_blank" class="btn-gold text-white font-medium py-4 px-10 rounded-full inline-flex items-center text-lg mx-auto pulse">
+                    <i class="fab fa-telegram-plane mr-3"></i> Записатися через Telegram
+                </a>
+                
+                <p class="mt-6 text-[#7a6a62]">@lesiafeels</p>
+            </div>
+        </div>
+    </section>
 
-    function changeLanguage(lang) {
-      const elements = document.querySelectorAll("[data-i18n]");
-      elements.forEach((el) => {
-        const key = el.getAttribute("data-i18n");
-        if (translations[lang] && translations[lang][key]) {
-          el.textContent = translations[lang][key];
+    <!-- Footer -->
+    <footer class="py-10 px-4 md:px-10 bg-[#f5e1da]">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-r from-[#d4b483] to-[#e6c28a] mr-3"></div>
+                        <h2 class="text-xl font-semibold text-[#5a4a42]">Lesia — телесний сексолог</h2>
+                    </div>
+                    <p class="mt-2 text-[#7a6a62]">© 2023 Усі права захищені</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-[#5a4a42] hover:text-[#d4b483] text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-[#5a4a42] hover:text-[#d4b483] text-2xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://t.me/lesiafeels" target="_blank" class="text-[#5a4a42] hover:text-[#d4b483] text-2xl"><i class="fab fa-telegram-plane"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language data
+        const translations = {
+            'uk': {
+                'title': 'Lesia — телесний сексолог',
+                'header_title': 'Леся — телесний сексолог',
+                'hero_title': 'Поверніться до свого тіла',
+                'hero_subtitle': 'Допомога у відновленні зв\'язку з тілом, емоціями та інтимністю через сексуальну терапію',
+                'book_button': 'Записатися на сесію',
+                'about_title': 'Про мене',
+                'about_text': 'Я — телесний сексолог з більш ніж 8-річним досвідом роботи. Моя місія — допомагати людям відновити зв\'язок зі своїм тілом, розкрити свою сексуальність і побудувати здорові стосунки з собою та іншими.',
+                'approach_title': 'Мій підхід',
+                'testimonials_title': 'Відгуки клієнтів',
+                'cta_title': 'Готові розпочати подорож до себе?',
+                'cta_text': 'Запишіться на першу консультацію та дізнайтесь, як сексуальна терапія може допомогти саме вам.',
+                'telegram_button': 'Записатися через Telegram',
+                'footer_text': '© 2023 Усі права захищені'
+            },
+            'ru': {
+                'title': 'Леся — телесный сексолог',
+                'header_title': 'Леся — телесный сексолог',
+                'hero_title': 'Вернитесь к своему телу',
+                'hero_subtitle': 'Помощь в восстановлении связи с телом, эмоциями и интимностью через сексуальную терапию',
+                'book_button': 'Записаться на сессию',
+                'about_title': 'Обо мне',
+                'about_text': 'Я — телесный сексолог с более чем 8-летним опытом работы. Моя миссия — помогать людям восстановить связь со своим телом, раскрыть свою сексуальность и построить здоровые отношения с собой и другими.',
+                'approach_title': 'Мой подход',
+                'testimonials_title': 'Отзывы клиентов',
+                'cta_title': 'Готовы начать путешествие к себе?',
+                'cta_text': 'Запишитесь на первую консультацию и узнайте, как сексуальная терапия может помочь именно вам.',
+                'telegram_button': 'Записаться через Telegram',
+                'footer_text': '© 2023 Все права защищены'
+            },
+            'en': {
+                'title': 'Lesia — body-oriented sexologist',
+                'header_title': 'Lesia — body-oriented sexologist',
+                'hero_title': 'Return to your body',
+                'hero_subtitle': 'Help in restoring connection with body, emotions and intimacy through sexual therapy',
+                'book_button': 'Book a session',
+                'about_title': 'About me',
+                'about_text': 'I am a body-oriented sexologist with more than 8 years of experience. My mission is to help people reconnect with their bodies, discover their sexuality and build healthy relationships with themselves and others.',
+                'approach_title': 'My approach',
+                'testimonials_title': 'Client testimonials',
+                'cta_title': 'Ready to start your journey to yourself?',
+                'cta_text': 'Book your first consultation and learn how sexual therapy can help you specifically.',
+                'telegram_button': 'Book via Telegram',
+                'footer_text': '© 2023 All rights reserved'
+            }
+        };
+
+        let currentLang = 'uk';
+
+        // Translation function
+        function translatePage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            
+            // Update page title
+            document.title = t.title;
+            
+            // Update header
+            document.querySelector('header h1').innerHTML = t.header_title;
+            
+            // Update hero section
+            document.querySelector('.hero-section h2').textContent = t.hero_title;
+            document.querySelector('.hero-section p').textContent = t.hero_subtitle;
+            document.querySelector('.hero-section a').textContent = t.book_button;
+            
+            // Update about section
+            document.querySelector('#about h2').textContent = t.about_title;
+            document.querySelector('#about p').textContent = t.about_text;
+            
+            // Update approach section
+            document.querySelector('#approach h2').textContent = t.approach_title;
+            
+            // Update testimonials section
+            document.querySelector('#testimonials h2').textContent = t.testimonials_title;
+            
+            // Update CTA section
+            document.querySelector('#contact h2').textContent = t.cta_title;
+            document.querySelector('#contact p').textContent = t.cta_text;
+            document.querySelector('#contact a').innerHTML = `<i class="fab fa-telegram-plane mr-3"></i> ${t.telegram_button}`;
+            
+            // Update footer
+            document.querySelector('footer p').textContent = t.footer_text;
         }
-      });
-    }
-  </script>
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Language switcher
+        document.querySelectorAll('[data-lang]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                // Here would be the actual language switching logic
+                alert('Language switching to ' + lang + ' would be implemented here');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-white', 'bg-opacity-80', 'backdrop-blur-sm', 'shadow-sm');
+            } else {
+                header.classList.remove('bg-white', 'bg-opacity-80', 'backdrop-blur-sm', 'shadow-sm');
+            }
+        });
+    </script>
 </body>
 </html>
