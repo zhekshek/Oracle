@@ -1,5 +1,158 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head><meta charset="UTF-8"><title>Леся — телесный сексолог</title></head>
-<body><h1>Леся — телесный сексолог</h1><p>О теле, чувствах и живой близости.</p></body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Леся — телесный сексолог</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: #f7f1ec;
+      color: #3d2b2b;
+      scroll-behavior: smooth;
+    }
+    header {
+      padding: 2em;
+      text-align: center;
+      background: #f0e6e0;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+    }
+    .section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3em 2em;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .cta {
+      background: #d8b8a8;
+      color: white;
+      text-align: center;
+      padding: 2em;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .cta a {
+      background: white;
+      color: #3d2b2b;
+      padding: 1em 2em;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .cta a:hover {
+      background: #f7e6dd;
+      transform: scale(1.05);
+    }
+    .testimonial {
+      font-style: italic;
+      border-left: 4px solid #cba;
+      margin: 1.5em 0;
+      padding-left: 1em;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5em;
+      margin-top: 1em;
+    }
+    .social-icons a {
+      color: #3d2b2b;
+      font-size: 1.5em;
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
+    }
+    .social-icons a:hover {
+      color: #b0725e;
+      transform: scale(1.1);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="lang-switch">
+    <select onchange="changeLanguage(this.value)">
+      <option value="ru" selected>Русский</option>
+      <option value="ua">Українська</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+
+  <header>
+    <h1 data-i18n="title">Леся — телесный сексолог</h1>
+    <p data-i18n="subtitle">О теле, чувствах и живой близости</p>
+  </header>
+
+  <section class="section">
+    <h2 data-i18n="about_title">Обо мне</h2>
+    <p data-i18n="about_text">
+      Я — Леся, телесный сексолог и проводница в мир чуткости, телесного согласия и чувственного присутствия. Работаю с темами доверия, стыда, удовольствия и границ. Моя практика основана на уважении к телу и его мудрости.
+    </p>
+    <div class="social-icons">
+      <a href="https://t.me/lesiafeels" title="Telegram" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="https://www.instagram.com/lesiapsy" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="testimonials_title">Отзывы</h2>
+    <div class="testimonial" data-i18n="testimonial_1">“Сессия с Лесей — это как вернуться домой в собственное тело. Очень бережно и глубоко.”</div>
+    <div class="testimonial" data-i18n="testimonial_2">“Я впервые почувствовала, что могу говорить о желаниях и страхах без стыда.”</div>
+    <div class="testimonial" data-i18n="testimonial_3">“Просто спасибо. Это было настоящее волшебство.”</div>
+  </section>
+
+  <section class="cta">
+    <h2 data-i18n="cta_title">Готовы начать?</h2>
+    <p data-i18n="cta_text">Запишитесь на сессию через Telegram</p>
+    <a href="https://t.me/lesiafeels" target="_blank">@lesiafeels</a>
+  </section>
+
+  <script>
+    const translations = {
+      ua: {
+        title: "Леся — тілесна сексологиня",
+        subtitle: "Про тіло, почуття та живу близькість",
+        about_title: "Про мене",
+        about_text: "Я — Леся, тілесна сексологиня і провідниця в світ чутливості, тілесної згоди та присутності...",
+        testimonials_title: "Відгуки",
+        testimonial_1: "Сесія з Лесею — це як повернення додому в власне тіло. Дуже дбайливо і глибоко.",
+        testimonial_2: "Я вперше відчула, що можу говорити про бажання і страхи без сорому.",
+        testimonial_3: "Просто дякую. Це було справжнє чарівництво.",
+        cta_title: "Готові почати?",
+        cta_text: "Запишіться на сесію через Telegram"
+      },
+      en: {
+        title: "Lesia — Somatic Sexologist",
+        subtitle: "About the body, feelings and intimate presence",
+        about_title: "About me",
+        about_text: "I'm Lesia, a somatic sexologist guiding people into sensitivity, embodied consent and sensual presence...",
+        testimonials_title: "Testimonials",
+        testimonial_1: "A session with Lesia feels like coming home to your own body. Gentle and deep.",
+        testimonial_2: "For the first time I felt I could talk about my desires and fears without shame.",
+        testimonial_3: "Thank you. That was true magic.",
+        cta_title: "Ready to begin?",
+        cta_text: "Book a session via Telegram"
+      }
+    };
+
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll("[data-i18n]");
+      elements.forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+    }
+  </script>
+</body>
 </html>
