@@ -1,142 +1,155 @@
-<!DOCTYPE html><html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesia — телесний сексолог</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="bg-[#faf7f5] text-[#5a4a42]">
-  <!-- Language Selector -->
-  <div class="fixed top-4 right-4 z-50">
-    <button onclick="translatePage('uk')" class="px-2">UA</button>
-    <button onclick="translatePage('ru')" class="px-2">RU</button>
-    <button onclick="translatePage('en')" class="px-2">EN</button>
-  </div>  <!-- Header -->  <header class="p-6 text-center">
-    <h1 class="text-3xl font-semibold" data-i18n="header_title">Леся — телесний сексолог</h1>
-  </header>  <!-- Hero Section -->  <section class="p-10 text-center">
-    <h2 class="text-4xl font-bold" data-i18n="hero_title">Поверніться до свого тіла</h2>
-    <p class="mt-4" data-i18n="hero_subtitle">Допомога у відновленні зв'язку з тілом, емоціями та інтимністю через сексуальну терапію</p>
-    <a href="#contact" class="btn-gold inline-block mt-6 text-white px-6 py-3 rounded bg-[#d4b483]" data-i18n="book_button">Записатися на сесію</a>
-  </section>  <!-- About Section -->  <section id="about" class="p-10 bg-[#fcfaf8]">
-    <h2 class="text-3xl font-semibold text-center" data-i18n="about_title">Про мене</h2>
-    <p class="mt-6 max-w-3xl mx-auto text-center" data-i18n="about_text">Я — телесний сексолог з більш ніж 8-річним досвідом роботи. Моя місія — допомагати людям відновити зв'язок зі своїм тілом, розкрити свою сексуальність і побудувати здорові стосунки з собою та іншими.</p><div class="grid md:grid-cols-3 gap-8 mt-10">
-  <div class="p-6 bg-white rounded shadow">
-    <h3 class="text-xl font-semibold mb-2" data-i18n="touch_title">Тілесність</h3>
-    <p data-i18n="touch_text">Допомога у відчутті тіла, його потреб та сигналів через практики усвідомленості та соматичні вправи.</p>
-  </div>
-  <div class="p-6 bg-white rounded shadow">
-    <h3 class="text-xl font-semibold mb-2" data-i18n="emotion_title">Емоції</h3>
-    <p data-i18n="emotion_text">Робота з емоційними блоками, травмами та стереотипами, що заважають жити повноцінним життям.</p>
-  </div>
-  <div class="p-6 bg-white rounded shadow">
-    <h3 class="text-xl font-semibold mb-2" data-i18n="intimacy_title">Інтимність</h3>
-    <p data-i18n="intimacy_text">Побудова здорової інтимності, що ґрунтується на взаємній згоді, довірі та повазі.</p>
-  </div>
-</div>
-
-  </section>  <!-- Testimonials Section -->  <section id="testimonials" class="p-10">
-    <h2 class="text-3xl font-semibold text-center" data-i18n="testimonials_title">Відгуки клієнтів</h2>
-    <div class="grid md:grid-cols-3 gap-6 mt-10">
-      <p class="italic" data-i18n="review_1">Сесії з Лесею допомогли мені відчути своє тіло по-новому...</p>
-      <p class="italic" data-i18n="review_2">Дякую за безпечний простір та професійний підхід...</p>
-      <p class="italic" data-i18n="review_3">Робота з Лесею змінила моє ставлення до себе...</p>
-    </div>
-  </section>  <!-- Contact CTA Section -->  <section id="contact" class="p-10 bg-[#fcfaf8] text-center">
-    <h2 class="text-3xl font-semibold" data-i18n="cta_title">Готові розпочати подорож до себе?</h2>
-    <p class="mt-4 max-w-2xl mx-auto" data-i18n="cta_text">Запишіться на першу консультацію та дізнайтесь, як сексуальна терапія може допомогти саме вам.</p>
-    <a href="https://t.me/lesiafeels" class="inline-flex items-center justify-center mt-6 px-6 py-3 rounded bg-[#d4b483] text-white" data-i18n="telegram_button">
-      <i class="fab fa-telegram-plane mr-2"></i> Записатися через Telegram
-    </a>
-  </section>  <!-- Footer -->  <footer class="p-6 text-center bg-[#f5e1da]">
-    <p data-i18n="footer_text">© 2023 Усі права захищені</p>
-  </footer>  <!-- Translator Script -->  <script>
+<script>
+    // Language data
     const translations = {
-      uk: {
-        title: 'Lesia — телесний сексолог',
-        header_title: 'Леся — телесний сексолог',
-        hero_title: 'Поверніться до свого тіла',
-        hero_subtitle: 'Допомога у відновленні зв\'язку з тілом, емоціями та інтимністю через сексуальну терапію',
-        book_button: 'Записатися на сесію',
-        about_title: 'Про мене',
-        about_text: 'Я — телесний сексолог з більш ніж 8-річним досвідом роботи. Моя місія — допомагати людям відновити зв\'язок зі своїм тілом...',
-        touch_title: 'Тілесність',
-        touch_text: 'Допомога у відчутті тіла, його потреб та сигналів...',
-        emotion_title: 'Емоції',
-        emotion_text: 'Робота з емоційними блоками, травмами...',
-        intimacy_title: 'Інтимність',
-        intimacy_text: 'Побудова здорової інтимності...',
-        testimonials_title: 'Відгуки клієнтів',
-        review_1: 'Сесії з Лесею допомогли мені...',
-        review_2: 'Дякую за безпечний простір...',
-        review_3: 'Робота з Лесею змінила моє ставлення...',
-        cta_title: 'Готові розпочати подорож до себе?',
-        cta_text: 'Запишіться на першу консультацію...',
-        telegram_button: 'Записатися через Telegram',
-        footer_text: '© 2023 Усі права захищені'
-      },
-      ru: {
-        title: 'Леся — телесный сексолог',
-        header_title: 'Леся — телесный сексолог',
-        hero_title: 'Вернитесь к своему телу',
-        hero_subtitle: 'Помощь в восстановлении связи с телом, эмоциями и интимностью через сексуальную терапию',
-        book_button: 'Записаться на сессию',
-        about_title: 'Обо мне',
-        about_text: 'Я — телесный сексолог с более чем 8-летним опытом работы...',
-        touch_title: 'Телесность',
-        touch_text: 'Помощь в ощущении тела...',
-        emotion_title: 'Эмоции',
-        emotion_text: 'Работа с эмоциональными блоками...',
-        intimacy_title: 'Интимность',
-        intimacy_text: 'Построение здоровой интимности...',
-        testimonials_title: 'Отзывы клиентов',
-        review_1: 'Сессии с Лесей помогли мне...',
-        review_2: 'Спасибо за безопасное пространство...',
-        review_3: 'Работа с Лесей изменила моё отношение...',
-        cta_title: 'Готовы начать путешествие к себе?',
-        cta_text: 'Запишитесь на первую консультацию...',
-        telegram_button: 'Записаться через Telegram',
-        footer_text: '© 2023 Все права защищены'
-      },
-      en: {
-        title: 'Lesia — body-oriented sexologist',
-        header_title: 'Lesia — body-oriented sexologist',
-        hero_title: 'Return to your body',
-        hero_subtitle: 'Help in restoring connection with body, emotions and intimacy through sexual therapy',
-        book_button: 'Book a session',
-        about_title: 'About me',
-        about_text: 'I am a body-oriented sexologist with more than 8 years of experience...',
-        touch_title: 'Body Awareness',
-        touch_text: 'Helping you feel your body and needs...',
-        emotion_title: 'Emotions',
-        emotion_text: 'Working with emotional blocks and trauma...',
-        intimacy_title: 'Intimacy',
-        intimacy_text: 'Building healthy intimacy...',
-        testimonials_title: 'Client testimonials',
-        review_1: 'Sessions with Lesia helped me...',
-        review_2: 'Thank you for the safe space...',
-        review_3: 'Work with Lesia changed how I relate to myself...',
-        cta_title: 'Ready to start your journey to yourself?',
-        cta_text: 'Book your first consultation and learn how sexual therapy can help you.',
-        telegram_button: 'Book via Telegram',
-        footer_text: '© 2023 All rights reserved'
-      }
+        'uk': {
+            'title': 'Lesia — телесний сексолог',
+            'header_title': 'Леся — телесний сексолог',
+            'hero_title': 'Поверніться до свого тіла',
+            'hero_subtitle': 'Допомога у відновленні зв\'язку з тілом, емоціями та інтимністю через сексуальну терапію',
+            'book_button': 'Записатися на сесію',
+            'about_title': 'Про мене',
+            'about_text': 'Я — телесний сексолог з більш ніж 8-річним досвідом роботи. Моя місія — допомагати людям відновити зв\'язок зі своїм тілом, розкрити свою сексуальність і побудувати здорові стосунки з собою та іншими.',
+            'touch_title': 'Тілесність',
+            'touch_text': 'Допомога у відчутті тіла, його потреб та сигналів через практики усвідомленості та соматичні вправи.',
+            'emotion_title': 'Емоції',
+            'emotion_text': 'Робота з емоційними блоками, травмами та стереотипами, що заважають жити повноцінним життям.',
+            'intimacy_title': 'Інтимність',
+            'intimacy_text': 'Побудова здорової інтимності, що ґрунтується на взаємній згоді, довірі та повазі.',
+            'approach_title': 'Мій підхід',
+            'safe_space_title': 'Безпечний простір',
+            'safe_space_text': 'Створення довірчого, безоціночного середовища, де ви можете бути собою без страху чи сорому.',
+            'individual_title': 'Індивідуальний підхід',
+            'individual_text': 'Кожна людина унікальна, тому програма роботи формується індивідуально під ваші потреби.',
+            'body_mind_title': 'Тіло-розум',
+            'body_mind_text': 'Інтеграція психологічних методів з тілесними практиками для глибокої трансформації.',
+            'testimonials_title': 'Відгуки клієнтів',
+            'review_1': 'Сесії з Лесею допомогли мені відчути своє тіло по-новому. Я навчилася чути його та довіряти йому.',
+            'review_2': 'Дякую за безпечний простір та професійний підхід. Змогла подолати страхи, що переслідували мене роками.',
+            'review_3': 'Робота з Лесею змінила моє ставлення до себе та своєї сексуальності. Це був важливий крок до любові до себе.',
+            'cta_title': 'Готові розпочати подорож до себе?',
+            'cta_text': 'Запишіться на першу консультацію та дізнайтесь, як сексуальна терапія може допомогти саме вам.',
+            'telegram_button': 'Записатися через Telegram',
+            'footer_text': '© 2023 Усі права захищені'
+        },
+        'ru': {
+            'title': 'Леся — телесный сексолог',
+            'header_title': 'Леся — телесный сексолог',
+            'hero_title': 'Вернитесь к своему телу',
+            'hero_subtitle': 'Помощь в восстановлении связи с телом, эмоциями и интимностью через сексуальную терапию',
+            'book_button': 'Записаться на сессию',
+            'about_title': 'Обо мне',
+            'about_text': 'Я — телесный сексолог с более чем 8-летним опытом работы. Моя миссия — помогать людям восстановить связь со своим телом, раскрыть свою сексуальность и построить здоровые отношения с собой и другими.',
+            'touch_title': 'Телесность',
+            'touch_text': 'Помощь в ощущении тела, его потребностей и сигналов через практики осознанности и соматические упражнения.',
+            'emotion_title': 'Эмоции',
+            'emotion_text': 'Работа с эмоциональными блоками, травмами и стереотипами, мешающими жить полноценной жизнью.',
+            'intimacy_title': 'Интимность',
+            'intimacy_text': 'Построение здоровой интимности на основе взаимного согласия, доверия и уважения.',
+            'approach_title': 'Мой подход',
+            'safe_space_title': 'Безопасное пространство',
+            'safe_space_text': 'Создание доверительной, безоценочной среды, где вы можете быть собой без страха или стыда.',
+            'individual_title': 'Индивидуальный подход',
+            'individual_text': 'Каждый человек уникален, поэтому программа формируется индивидуально под ваши потребности.',
+            'body_mind_title': 'Тело-разум',
+            'body_mind_text': 'Интеграция психологических методов с телесными практиками для глубокой трансформации.',
+            'testimonials_title': 'Отзывы клиентов',
+            'review_1': 'Сессии с Лесей помогли мне по-новому почувствовать своё тело. Я научилась слышать его и доверять ему.',
+            'review_2': 'Спасибо за безопасное пространство и профессиональный подход. Смогла преодолеть страхи, преследовавшие меня годами.',
+            'review_3': 'Работа с Лесей изменила моё отношение к себе и своей сексуальности. Это был важный шаг к любви к себе.',
+            'cta_title': 'Готовы начать путешествие к себе?',
+            'cta_text': 'Запишитесь на первую консультацию и узнайте, как сексуальная терапия может помочь именно вам.',
+            'telegram_button': 'Записаться через Telegram',
+            'footer_text': '© 2023 Все права защищены'
+        },
+        'en': {
+            'title': 'Lesia — body-oriented sexologist',
+            'header_title': 'Lesia — body-oriented sexologist',
+            'hero_title': 'Return to your body',
+            'hero_subtitle': 'Help in restoring connection with body, emotions and intimacy through sexual therapy',
+            'book_button': 'Book a session',
+            'about_title': 'About me',
+            'about_text': 'I am a body-oriented sexologist with more than 8 years of experience. My mission is to help people reconnect with their bodies, discover their sexuality and build healthy relationships with themselves and others.',
+            'touch_title': 'Body Awareness',
+            'touch_text': 'Helping you feel your body, needs and signals through mindfulness practices and somatic exercises.',
+            'emotion_title': 'Emotions',
+            'emotion_text': 'Working with emotional blocks, traumas and limiting beliefs that prevent a fulfilling life.',
+            'intimacy_title': 'Intimacy',
+            'intimacy_text': 'Building healthy intimacy based on mutual consent, trust and respect.',
+            'approach_title': 'My approach',
+            'safe_space_title': 'Safe space',
+            'safe_space_text': 'Creating a trusting, non-judgmental environment where you can be yourself without fear or shame.',
+            'individual_title': 'Individual approach',
+            'individual_text': 'Every person is unique, so the program is tailored to your individual needs.',
+            'body_mind_title': 'Body-Mind',
+            'body_mind_text': 'Integrating psychological methods with somatic practices for deep transformation.',
+            'testimonials_title': 'Client testimonials',
+            'review_1': 'Sessions with Lesia helped me feel my body in a new way. I learned to listen to it and trust it.',
+            'review_2': 'Thank you for the safe space and professional approach. I was able to overcome fears that haunted me for years.',
+            'review_3': 'Working with Lesia changed how I see myself and my sexuality. It was an important step toward self-love.',
+            'cta_title': 'Ready to start your journey to yourself?',
+            'cta_text': 'Book your first consultation and find out how sexual therapy can help you.',
+            'telegram_button': 'Book via Telegram',
+            'footer_text': '© 2023 All rights reserved'
+        }
     };
 
+    let currentLang = 'uk';
+
+    // Translation function
     function translatePage(lang) {
-      const t = translations[lang];
-      if (!t) return;
-      document.title = t.title;
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (t[key]) {
-          if (el.tagName === 'A' && el.querySelector('i')) {
-            el.innerHTML = `<i class="fab fa-telegram-plane mr-2"></i> ${t[key]}`;
-          } else {
-            el.textContent = t[key];
-          }
+        currentLang = lang;
+        const t = translations[lang];
+
+        if (!t) return;
+
+        document.title = t.title;
+
+        document.querySelector('header h1').innerHTML = t.header_title;
+        document.querySelector('.hero-section h2').textContent = t.hero_title;
+        document.querySelector('.hero-section p').textContent = t.hero_subtitle;
+        document.querySelector('.hero-section a').textContent = t.book_button;
+
+        document.querySelector('#about h2').textContent = t.about_title;
+        document.querySelector('#about p').textContent = t.about_text;
+
+        const aboutCards = document.querySelectorAll('#about .embossed');
+        if (aboutCards.length === 3) {
+            aboutCards[0].querySelector('h3').textContent = t.touch_title;
+            aboutCards[0].querySelector('p').textContent = t.touch_text;
+
+            aboutCards[1].querySelector('h3').textContent = t.emotion_title;
+            aboutCards[1].querySelector('p').textContent = t.emotion_text;
+
+            aboutCards[2].querySelector('h3').textContent = t.intimacy_title;
+            aboutCards[2].querySelector('p').textContent = t.intimacy_text;
         }
-      });
+
+        document.querySelector('#approach h2').textContent = t.approach_title;
+        const approachItems = document.querySelectorAll('#approach h3');
+        const approachTexts = document.querySelectorAll('#approach p');
+        if (approachItems.length >= 3 && approachTexts.length >= 3) {
+            approachItems[0].textContent = t.safe_space_title;
+            approachTexts[0].textContent = t.safe_space_text;
+
+            approachItems[1].textContent = t.individual_title;
+            approachTexts[1].textContent = t.individual_text;
+
+            approachItems[2].textContent = t.body_mind_title;
+            approachTexts[2].textContent = t.body_mind_text;
+        }
+
+        document.querySelector('#testimonials h2').textContent = t.testimonials_title;
+        const reviews = document.querySelectorAll('#testimonials .testimonial-card p.italic, #testimonials .testimonial-card p');
+        if (reviews.length >= 3) {
+            reviews[0].textContent = t.review_1;
+            reviews[1].textContent = t.review_2;
+            reviews[2].textContent = t.review_3;
+        }
+
+        document.querySelector('#contact h2').textContent = t.cta_title;
+        document.querySelector('#contact p').textContent = t.cta_text;
+        document.querySelector('#contact a').innerHTML = `<i class="fab fa-telegram-plane mr-3"></i> ${t.telegram_button}`;
+
+        document.querySelector('footer p').textContent = t.footer_text;
     }
-  </script></body>
-</html>
+</script>
