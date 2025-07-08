@@ -4,53 +4,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lesia — телесний сексолог</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-[#faf7f5] text-[#5a4a42]">
-  <!-- Языковое меню -->
-  <div class="p-4">
-    <button onclick="translatePage('uk')">UA</button>
-    <button onclick="translatePage('ru')">RU</button>
-    <button onclick="translatePage('en')">EN</button>
-  </div>  <!-- Секция hero -->  <section class="p-10">
-    <h1 class="text-3xl font-bold" data-i18n="hero_title">Поверніться до свого тіла</h1>
-    <p class="mt-4" data-i18n="hero_subtitle">Допомога у відновленні зв'язку з тілом...</p>
-    <a href="#contact" class="btn-gold inline-block mt-4 text-white px-6 py-2 rounded" data-i18n="book_button">Записатися на сесію</a>
-  </section>  <!-- Про мене -->  <section class="p-10" id="about">
-    <h2 class="text-2xl font-semibold" data-i18n="about_title">Про мене</h2>
-    <p class="mt-4" data-i18n="about_text">Я — телесний сексолог з більш ніж 8-річним досвідом роботи...</p>
-    <h3 class="mt-8 text-xl font-semibold" data-i18n="touch_title">Тілесність</h3>
-    <p data-i18n="touch_text">Допомога у відчутті тіла...</p>
-    <h3 class="mt-8 text-xl font-semibold" data-i18n="emotion_title">Емоції</h3>
-    <p data-i18n="emotion_text">Робота з емоційними блоками...</p>
-    <h3 class="mt-8 text-xl font-semibold" data-i18n="intimacy_title">Інтимність</h3>
-    <p data-i18n="intimacy_text">Побудова здорової інтимності...</p>
-  </section>  <!-- Відгуки -->  <section class="p-10" id="testimonials">
-    <h2 class="text-2xl font-semibold" data-i18n="testimonials_title">Відгуки клієнтів</h2>
-    <p class="mt-4" data-i18n="review_1">Сесії з Лесею допомогли мені...</p>
-    <p class="mt-4" data-i18n="review_2">Дякую за безпечний простір...</p>
-    <p class="mt-4" data-i18n="review_3">Робота з Лесею змінила моє ставлення...</p>
-  </section>  <!-- CTA -->  <section class="p-10" id="contact">
-    <h2 class="text-2xl font-semibold" data-i18n="cta_title">Готові розпочати подорож до себе?</h2>
-    <p class="mt-4" data-i18n="cta_text">Запишіться на першу консультацію...</p>
-    <a href="#" class="btn-gold inline-block mt-4 text-white px-6 py-2 rounded" data-i18n="telegram_button">
+  <!-- Language Selector -->
+  <div class="fixed top-4 right-4 z-50">
+    <button onclick="translatePage('uk')" class="px-2">UA</button>
+    <button onclick="translatePage('ru')" class="px-2">RU</button>
+    <button onclick="translatePage('en')" class="px-2">EN</button>
+  </div>  <!-- Header -->  <header class="p-6 text-center">
+    <h1 class="text-3xl font-semibold" data-i18n="header_title">Леся — телесний сексолог</h1>
+  </header>  <!-- Hero Section -->  <section class="p-10 text-center">
+    <h2 class="text-4xl font-bold" data-i18n="hero_title">Поверніться до свого тіла</h2>
+    <p class="mt-4" data-i18n="hero_subtitle">Допомога у відновленні зв'язку з тілом, емоціями та інтимністю через сексуальну терапію</p>
+    <a href="#contact" class="btn-gold inline-block mt-6 text-white px-6 py-3 rounded bg-[#d4b483]" data-i18n="book_button">Записатися на сесію</a>
+  </section>  <!-- About Section -->  <section id="about" class="p-10 bg-[#fcfaf8]">
+    <h2 class="text-3xl font-semibold text-center" data-i18n="about_title">Про мене</h2>
+    <p class="mt-6 max-w-3xl mx-auto text-center" data-i18n="about_text">Я — телесний сексолог з більш ніж 8-річним досвідом роботи. Моя місія — допомагати людям відновити зв'язок зі своїм тілом, розкрити свою сексуальність і побудувати здорові стосунки з собою та іншими.</p><div class="grid md:grid-cols-3 gap-8 mt-10">
+  <div class="p-6 bg-white rounded shadow">
+    <h3 class="text-xl font-semibold mb-2" data-i18n="touch_title">Тілесність</h3>
+    <p data-i18n="touch_text">Допомога у відчутті тіла, його потреб та сигналів через практики усвідомленості та соматичні вправи.</p>
+  </div>
+  <div class="p-6 bg-white rounded shadow">
+    <h3 class="text-xl font-semibold mb-2" data-i18n="emotion_title">Емоції</h3>
+    <p data-i18n="emotion_text">Робота з емоційними блоками, травмами та стереотипами, що заважають жити повноцінним життям.</p>
+  </div>
+  <div class="p-6 bg-white rounded shadow">
+    <h3 class="text-xl font-semibold mb-2" data-i18n="intimacy_title">Інтимність</h3>
+    <p data-i18n="intimacy_text">Побудова здорової інтимності, що ґрунтується на взаємній згоді, довірі та повазі.</p>
+  </div>
+</div>
+
+  </section>  <!-- Testimonials Section -->  <section id="testimonials" class="p-10">
+    <h2 class="text-3xl font-semibold text-center" data-i18n="testimonials_title">Відгуки клієнтів</h2>
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <p class="italic" data-i18n="review_1">Сесії з Лесею допомогли мені відчути своє тіло по-новому...</p>
+      <p class="italic" data-i18n="review_2">Дякую за безпечний простір та професійний підхід...</p>
+      <p class="italic" data-i18n="review_3">Робота з Лесею змінила моє ставлення до себе...</p>
+    </div>
+  </section>  <!-- Contact CTA Section -->  <section id="contact" class="p-10 bg-[#fcfaf8] text-center">
+    <h2 class="text-3xl font-semibold" data-i18n="cta_title">Готові розпочати подорож до себе?</h2>
+    <p class="mt-4 max-w-2xl mx-auto" data-i18n="cta_text">Запишіться на першу консультацію та дізнайтесь, як сексуальна терапія може допомогти саме вам.</p>
+    <a href="https://t.me/lesiafeels" class="inline-flex items-center justify-center mt-6 px-6 py-3 rounded bg-[#d4b483] text-white" data-i18n="telegram_button">
       <i class="fab fa-telegram-plane mr-2"></i> Записатися через Telegram
     </a>
-  </section>  <!-- Footer -->  <footer class="p-10 bg-[#f5e1da]">
+  </section>  <!-- Footer -->  <footer class="p-6 text-center bg-[#f5e1da]">
     <p data-i18n="footer_text">© 2023 Усі права захищені</p>
-  </footer>  <!-- JS для перевода -->  <script>
+  </footer>  <!-- Translator Script -->  <script>
     const translations = {
       uk: {
         title: 'Lesia — телесний сексолог',
+        header_title: 'Леся — телесний сексолог',
         hero_title: 'Поверніться до свого тіла',
-        hero_subtitle: 'Допомога у відновленні зв\'язку з тілом...',
+        hero_subtitle: 'Допомога у відновленні зв\'язку з тілом, емоціями та інтимністю через сексуальну терапію',
         book_button: 'Записатися на сесію',
         about_title: 'Про мене',
-        about_text: 'Я — телесний сексолог з більш ніж 8-річним досвідом роботи...',
+        about_text: 'Я — телесний сексолог з більш ніж 8-річним досвідом роботи. Моя місія — допомагати людям відновити зв\'язок зі своїм тілом...',
         touch_title: 'Тілесність',
-        touch_text: 'Допомога у відчутті тіла...',
+        touch_text: 'Допомога у відчутті тіла, його потреб та сигналів...',
         emotion_title: 'Емоції',
-        emotion_text: 'Робота з емоційними блоками...',
+        emotion_text: 'Робота з емоційними блоками, травмами...',
         intimacy_title: 'Інтимність',
         intimacy_text: 'Побудова здорової інтимності...',
         testimonials_title: 'Відгуки клієнтів',
@@ -64,11 +77,12 @@
       },
       ru: {
         title: 'Леся — телесный сексолог',
+        header_title: 'Леся — телесный сексолог',
         hero_title: 'Вернитесь к своему телу',
-        hero_subtitle: 'Помощь в восстановлении связи с телом...',
+        hero_subtitle: 'Помощь в восстановлении связи с телом, эмоциями и интимностью через сексуальную терапию',
         book_button: 'Записаться на сессию',
         about_title: 'Обо мне',
-        about_text: 'Я — телесный сексолог с более чем 8-летним опытом...',
+        about_text: 'Я — телесный сексолог с более чем 8-летним опытом работы...',
         touch_title: 'Телесность',
         touch_text: 'Помощь в ощущении тела...',
         emotion_title: 'Эмоции',
@@ -86,23 +100,24 @@
       },
       en: {
         title: 'Lesia — body-oriented sexologist',
+        header_title: 'Lesia — body-oriented sexologist',
         hero_title: 'Return to your body',
-        hero_subtitle: 'Help in restoring connection with body...',
+        hero_subtitle: 'Help in restoring connection with body, emotions and intimacy through sexual therapy',
         book_button: 'Book a session',
         about_title: 'About me',
-        about_text: 'I am a body-oriented sexologist with over 8 years of experience...',
+        about_text: 'I am a body-oriented sexologist with more than 8 years of experience...',
         touch_title: 'Body Awareness',
-        touch_text: 'Helping you feel your body...',
+        touch_text: 'Helping you feel your body and needs...',
         emotion_title: 'Emotions',
-        emotion_text: 'Working with emotional blocks...',
+        emotion_text: 'Working with emotional blocks and trauma...',
         intimacy_title: 'Intimacy',
         intimacy_text: 'Building healthy intimacy...',
         testimonials_title: 'Client testimonials',
         review_1: 'Sessions with Lesia helped me...',
         review_2: 'Thank you for the safe space...',
-        review_3: 'Work with Lesia changed how I see myself...',
+        review_3: 'Work with Lesia changed how I relate to myself...',
         cta_title: 'Ready to start your journey to yourself?',
-        cta_text: 'Book your first consultation...',
+        cta_text: 'Book your first consultation and learn how sexual therapy can help you.',
         telegram_button: 'Book via Telegram',
         footer_text: '© 2023 All rights reserved'
       }
