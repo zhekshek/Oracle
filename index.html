@@ -69,16 +69,37 @@
 </head>
 <body class="font-sans bg-rose-50 text-gray-700">
     <!-- Header with Navigation -->
-    <header class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-serif text-rose-300">Lesia Vasylievna</div>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#about" class="nav-link text-gray-600 hover:text-rose-300">About</a>
-                <a href="#approach" class="nav-link text-gray-600 hover:text-rose-300">Approach</a>
-                <a href="#feel" class="nav-link text-gray-600 hover:text-rose-300">Feel</a>
-                <a href="#tools" class="nav-link text-gray-600 hover:text-rose-300">Tools</a>
-                <a href="#reviews" class="nav-link text-gray-600 hover:text-rose-300">Reviews</a>
-                <a href="#contact" class="nav-link text-gray-600 hover:text-rose-300">Contact</a>
+  <header class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div>
+            <span class="text-2xl font-serif text-rose-300" data-lang="en">Lesia Vasylievna</span>
+            <span class="text-2xl font-serif text-rose-300 hidden" data-lang="ua">Леся Василівна</span>
+            <span class="text-2xl font-serif text-rose-300 hidden" data-lang="ru">Леся Васильевна</span>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+            <a href="#about" class="nav-link text-gray-600 hover:text-rose-300" data-lang="en">About</a>
+            <a href="#about" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ua">Про мене</a>
+            <a href="#about" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ru">Обо мне</a>
+            
+            <a href="#approach" class="nav-link text-gray-600 hover:text-rose-300" data-lang="en">Approach</a>
+            <a href="#approach" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ua">Підхід</a>
+            <a href="#approach" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ru">Подход</a>
+            
+            <a href="#feel" class="nav-link text-gray-600 hover:text-rose-300" data-lang="en">Feel</a>
+            <a href="#feel" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ua">Відчуття</a>
+            <a href="#feel" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ru">Ощущения</a>
+            
+            <a href="#tools" class="nav-link text-gray-600 hover:text-rose-300" data-lang="en">Tools</a>
+            <a href="#tools" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ua">Інструменти</a>
+            <a href="#tools" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ru">Инструменты</a>
+            
+            <a href="#reviews" class="nav-link text-gray-600 hover:text-rose-300" data-lang="en">Reviews</a>
+            <a href="#reviews" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ua">Відгуки</a>
+            <a href="#reviews" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ru">Отзывы</a>
+            
+            <a href="#contact" class="nav-link text-gray-600 hover:text-rose-300" data-lang="en">Contact</a>
+            <a href="#contact" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ua">Контакт</a>
+            <a href="#contact" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ru">Контакт</a>
             </nav>
             <div class="flex space-x-2">
                 <button onclick="changeLanguage('en')" class="language-switcher px-2 py-1 rounded-full text-xs bg-rose-100 text-rose-400">EN</button>
