@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesia Vasylievna | Psychologist & Sexologist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for elements that need more precise styling */
+        .language-switcher {
+            transition: all 0.3s ease;
+        }
+        .language-switcher:hover {
+            transform: translateY(-2px);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #D4A5A5;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .hero-section {
+            background-image: linear-gradient(rgba(255, 245, 240, 0.9), rgba(255, 245, 240, 0.9)), url('https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .section-divider {
+            height: 100px;
+            background: linear-gradient(to bottom right, transparent 49.5%, #F8EDEB 50%), linear-gradient(to top right, transparent 49.5%, #F8EDEB 50%);
+        }
+        .therapy-card {
+            transition: all 0.3s ease;
+        }
+        .therapy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .review-card {
+            transition: all 0.3s ease;
+        }
+        .review-card:hover {
+            transform: scale(1.02);
+        }
+        .question-option {
+            transition: all 0.3s ease;
+        }
+        .question-option:hover {
+            background-color: #F8EDEB;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="font-sans bg-rose-50 text-gray-700">
+    <!-- Header with Navigation -->
+  <header class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div>
+            <span class="text-2xl font-serif text-rose-300" data-lang="en">Lesia Vasylievna</span>
+            <span class="text-2xl font-serif text-rose-300 hidden" data-lang="ua">Леся Василівна</span>
+            <span class="text-2xl font-serif text-rose-300 hidden" data-lang="ru">Леся Васильевна</span>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+            <a href="#about" class="nav-link text-gray-600 hover:text-rose-300" data-lang="en">About</a>
+            <a href="#about" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ua">Про мене</a>
+            <a href="#about" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ru">Обо мне</a>
+            
+            <a href="#approach" class="nav-link text-gray-600 hover:text-rose-300" data-lang="en">Approach</a>
+            <a href="#approach" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ua">Підхід</a>
+            <a href="#approach" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ru">Подход</a>
+            
+            <a href="#feel" class="nav-link text-gray-600 hover:text-rose-300" data-lang="en">Feel</a>
+            <a href="#feel" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ua">Відчуття</a>
+            <a href="#feel" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ru">Ощущения</a>
+            
+            <a href="#tools" class="nav-link text-gray-600 hover:text-rose-300" data-lang="en">Tools</a>
+            <a href="#tools" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ua">Інструменти</a>
+            <a href="#tools" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ru">Инструменты</a>
+            
+            <a href="#reviews" class="nav-link text-gray-600 hover:text-rose-300" data-lang="en">Reviews</a>
+            <a href="#reviews" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ua">Відгуки</a>
+            <a href="#reviews" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ru">Отзывы</a>
+            
+            <a href="#contact" class="nav-link text-gray-600 hover:text-rose-300" data-lang="en">Contact</a>
+            <a href="#contact" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ua">Контакт</a>
+            <a href="#contact" class="nav-link text-gray-600 hover:text-rose-300 hidden" data-lang="ru">Контакт</a>
+            </nav>
+            <div class="flex space-x-2">
+                <button onclick="changeLanguage('en')" class="language-switcher px-2 py-1 rounded-full text-xs bg-rose-100 text-rose-400">EN</button>
+                <button onclick="changeLanguage('ua')" class="language-switcher px-2 py-1 rounded-full text-xs bg-rose-100 text-rose-400">UA</button>
+                <button onclick="changeLanguage('ru')" class="language-switcher px-2 py-1 rounded-full text-xs bg-rose-100 text-rose-400">RU</button>
+            </div>
+            <button class="md:hidden text-rose-300">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section pt-32 pb-20">
+        <div class="container mx-auto px-4 flex flex-col items-center text-center">
+            <h1 class="text-4xl md:text-5xl font-serif mb-6 text-rose-400" data-lang="en">I am Lesia Vasylievna. Psychologist, sexologist.</h1>
+            <h1 class="text-4xl md:text-5xl font-serif mb-6 text-rose-400 hidden" data-lang="ua">Я Леся Василівна. Психолог, сексолог.</h1>
+            <h1 class="text-4xl md:text-5xl font-serif mb-6 text-rose-400 hidden" data-lang="ru">Я Леся Васильевна. Психолог, сексолог.</h1>
+            
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl text-gray-600" data-lang="en">Helping you hear yourself, release shame, and regain the joy of life.</p>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl text-gray-600 hidden" data-lang="ua">Допомагаю вам почути себе, звільнитися від сорому та повернути радість життя.</p>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl text-gray-600 hidden" data-lang="ru">Помогаю вам услышать себя, освободиться от стыда и вернуть радость жизни.</p>
+            
+            <a href="https://t.me/LesiaFoxxx" target="_blank" class="bg-rose-300 hover:bg-rose-400 text-white px-8 py-3 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg inline-block">
+                <span data-lang="en">Book a session</span>
+                <span class="hidden" data-lang="ua">Записатися на сесію</span>
+                <span class="hidden" data-lang="ru">Записаться на сессию</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400" data-lang="en">About Me</h2>
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400 hidden" data-lang="ua">Про мене</h2>
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400 hidden" data-lang="ru">Обо мне</h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3">
+                    <img src="https://i.postimg.cc/ZnPbxdXG/IMG-20250708-161925-475.jpg" 
+                         alt="Lesia Vasylievna" 
+                         class="rounded-full w-64 h-64 object-cover mx-auto shadow-lg border-4 border-rose-100">
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-lg mb-6 text-gray-600" data-lang="en">
+                        I believe that true healing comes from integrating mind, body, and emotions. My approach combines evidence-based methods with deep respect for your unique journey. 
+                        Through EMDR, imTT, MAC, and transformational games, I help clients release emotional blocks and reconnect with their authentic selves.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-600 hidden" data-lang="ua">
+                        Я вірю, що справжнє одужання походить від інтеграції розуму, тіла та емоцій. Мій підхід поєднує науково обґрунтовані методи з глибокою повагою до вашого унікального шляху.
+                        За допомогою EMDR, imTT, MAC та трансформаційних ігор я допомагаю клієнтам звільнити емоційні блоки та знову зв'язатися зі своїм справжнім «я».
+                    </p>
+                    <p class="text-lg mb-6 text-gray-600 hidden" data-lang="ru">
+                        Я верю, что настоящее исцеление приходит от интеграции разума, тела и эмоций. Мой подход сочетает научно обоснованные методы с глубоким уважением к вашему уникальному пути.
+                        С помощью EMDR, imTT, MAC и трансформационных игр я помогаю клиентам освобождаться от эмоциональных блоков и восстанавливать связь со своим истинным «я».
+                    </p>
+                    
+                    <p class="text-lg text-gray-600" data-lang="en">
+                        Specializing in trauma processing, shame release, and restoring intimate connection, I create a safe space where transformation can unfold naturally. 
+                        Your healing journey is sacred, and I'm honored to walk beside you.
+                    </p>
+                    <p class="text-lg text-gray-600 hidden" data-lang="ua">
+                        Спеціалізуючись на обробці травм, звільненні від сорому та відновленні інтимного зв'язку, я створюю безпечний простір, де трансформація може відбуватися природним шляхом.
+                        Ваша подорож до одужання є священною, і для мене честь йти поруч із вами.
+                    </p>
+                    <p class="text-lg text-gray-600 hidden" data-lang="ru">
+                        Специализируясь на переработке травм, освобождении от стыда и восстановлении интимной связи, я создаю безопасное пространство, где трансформация может происходить естественным образом.
+                        Ваше путешествие к исцелению священно, и для меня честь идти рядом с вами.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section id="approach" class="py-20 bg-rose-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400" data-lang="en">How I Work</h2>
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400 hidden" data-lang="ua">Як я працюю</h2>
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400 hidden" data-lang="ru">Как я работаю</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="therapy-card bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="text-rose-300 text-4xl mb-4">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-4 text-rose-400" data-lang="en">Diagnosing the Problem</h3>
+                    <h3 class="text-xl font-serif mb-4 text-rose-400 hidden" data-lang="ua">Діагностика проблеми</h3>
+                    <h3 class="text-xl font-serif mb-4 text-rose-400 hidden" data-lang="ru">Диагностика проблемы</h3>
+                    <p class="text-gray-600" data-lang="en">
+                        We begin by understanding your unique situation, identifying patterns and root causes that need attention.
+                    </p>
+                    <p class="text-gray-600 hidden" data-lang="ua">
+                        Ми починаємо з розуміння вашої унікальної ситуації, виявляючи моделі та основні причини, які потребують уваги.
+                    </p>
+                    <p class="text-gray-600 hidden" data-lang="ru">
+                        Мы начинаем с понимания вашей уникальной ситуации, выявляя модели и корневые причины, которые требуют внимания.
+                    </p>
+                </div>
+                
+                <div class="therapy-card bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="text-rose-300 text-4xl mb-4">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-4 text-rose-400" data-lang="en">Working with Blocks</h3>
+                    <h3 class="text-xl font-serif mb-4 text-rose-400 hidden" data-lang="ua">Робота з блоками</h3>
+                    <h3 class="text-xl font-serif mb-4 text-rose-400 hidden" data-lang="ru">Работа с блоками</h3>
+                    <p class="text-gray-600" data-lang="en">
+                        Using specialized techniques to release limiting beliefs and emotional blocks that keep you stuck.
+                    </p>
+                    <p class="text-gray-600 hidden" data-lang="ua">
+                        Використовуючи спеціальні техніки для звільнення обмежуючих переконань та емоційних блоків, які вас утримують.
+                    </p>
+                    <p class="text-gray-600 hidden" data-lang="ru">
+                        Используя специальные техники для освобождения от ограничивающих убеждений и эмоциональных блоков, которые вас удерживают.
+                    </p>
+                </div>
+                
+                <div class="therapy-card bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="text-rose-300 text-4xl mb-4">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-4 text-rose-400" data-lang="en">Securing Results</h3>
+                    <h3 class="text-xl font-serif mb-4 text-rose-400 hidden" data-lang="ua">Закріплення результатів</h3>
+                    <h3 class="text-xl font-serif mb-4 text-rose-400 hidden" data-lang="ru">Закрепление результатов</h3>
+                    <p class="text-gray-600" data-lang="en">
+                        Integrating changes and restoring your natural connection with yourself for lasting transformation.
+                    </p>
+                    <p class="text-gray-600 hidden" data-lang="ua">
+                        Інтеграція змін і відновлення вашого природного зв'язку з собою для тривалої трансформації.
+                    </p>
+                    <p class="text-gray-600 hidden" data-lang="ru">
+                        Интеграция изменений и восстановление вашей естественной связи с собой для устойчивой трансформации.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <h3 class="text-xl font-serif mb-4 text-rose-400" data-lang="en">Common Focus Areas</h3>
+                <h3 class="text-xl font-serif mb-4 text-rose-400 hidden" data-lang="ua">Поширені напрямки роботи</h3>
+                <h3 class="text-xl font-serif mb-4 text-rose-400 hidden" data-lang="ru">Распространенные направления работы</h3>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full" data-lang="en">Releasing shame</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ua">Звільнення від сорому</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ru">Освобождение от стыда</span>
+                    
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full" data-lang="en">Working with trauma</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ua">Работа з травмою</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ru">Работа с травмой</span>
+                    
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full" data-lang="en">Intimate connection</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ua">Інтимний зв'язок</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ru">Интимная связь</span>
+                    
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full" data-lang="en">Self-acceptance</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ua">Самоприйняття</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ru">Самопринятие</span>
+                    
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full" data-lang="en">Emotional regulation</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ua">Емоційна регуляція</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ru">Эмоциональная регуляция</span>
+                    
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full" data-lang="en">Interview</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ua">Співбесіда</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ru">Собеседование</span>
+
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full" data-lang="en">Date</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ua">Побачення</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ru">Свидание</span>
+
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full" data-lang="en">Important negotiations</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ua">Важливі перемовини</span>
+                    <span class="px-4 py-2 bg-rose-100 text-rose-500 rounded-full hidden" data-lang="ru">Важные переговоры</span>
+               
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feel Section -->
+    <section id="feel" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400" data-lang="en">From My Journal</h2>
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400 hidden" data-lang="ua">З мого щоденника</h2>
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400 hidden" data-lang="ru">Из моего дневника</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-rose-50 p-6 rounded-lg border-l-4 border-rose-300">
+                    <p class="italic text-gray-600 mb-4" data-lang="en">
+                        "Shame grows in secrecy. When we bring our hidden parts into the light of compassionate awareness, they begin to transform. Your vulnerability is not weakness—it's the birthplace of true connection."
+                    </p>
+                    <p class="italic text-gray-600 mb-4 hidden" data-lang="ua">
+                        "Сором росте в таємниці. Коли ми виносимо наші приховані частини на світло співчутливої свідомості, вони починають трансформуватися. Ваша вразливість — це не слабкість, це місце народження справжнього зв'язку."
+                    </p>
+                    <p class="italic text-gray-600 mb-4 hidden" data-lang="ru">
+                        "Стыд растёт в тайне. Когда мы выносим наши скрытые части на свет сострадательного осознания, они начинают трансформироваться. Ваша уязвимость — это не слабость, это место рождения истинной связи."
+                    </p>
+                    <div class="text-rose-300 text-sm" data-lang="en">April 12, 2023</div>
+                    <div class="text-rose-300 text-sm hidden" data-lang="ua">12 квітня 2023</div>
+                    <div class="text-rose-300 text-sm hidden" data-lang="ru">12 апреля 2023</div>
+                </div>
+                
+                <div class="bg-rose-50 p-6 rounded-lg border-l-4 border-rose-300">
+                    <p class="italic text-gray-600 mb-4" data-lang="en">
+                        "Your body remembers what your mind has tried to forget. Healing happens when we create space to listen to its wisdom with kindness rather than judgment."
+                    </p>
+                    <p class="italic text-gray-600 mb-4 hidden" data-lang="ua">
+                        "Ваше тіло пам'ятає те, що ваш розум намагався забути. Одужання відбувається, коли ми створюємо простір, щоб слухати його мудрість з добротою, а не з осудами."
+                    </p>
+                    <p class="italic text-gray-600 mb-4 hidden" data-lang="ru">
+                        "Ваше тело помнит то, что ваш разум пытался забыть. Исцеление происходит, когда мы создаём пространство, чтобы слушать его мудрость с добротой, а не с осуждением."
+                    </p>
+                    <div class="text-rose-300 text-sm" data-lang="en">March 28, 2023</div>
+                    <div class="text-rose-300 text-sm hidden" data-lang="ua">28 березня 2023</div>
+                    <div class="text-rose-300 text-sm hidden" data-lang="ru">28 марта 2023</div>
+                </div>
+                
+                <div class="bg-rose-50 p-6 rounded-lg border-l-4 border-rose-300">
+                    <p class="italic text-gray-600 mb-4" data-lang="en">
+                        "Intimacy begins with yourself. How can you truly connect with another if you're disconnected from your own desires, boundaries, and authentic voice?"
+                    </p>
+                    <p class="italic text-gray-600 mb-4 hidden" data-lang="ua">
+                        "Інтимність починається з себе. Як ви можете по-справжньому з'єднатися з іншим, якщо ви відключені від власних бажань, меж і справжнього голосу?"
+                    </p>
+                    <p class="italic text-gray-600 mb-4 hidden" data-lang="ru">
+                        "Интимность начинается с себя. Как вы можете по-настоящему соединиться с другим, если отключены от собственных желаний, границ и подлинного голоса?"
+                    </p>
+                    <div class="text-rose-300 text-sm" data-lang="en">February 15, 2023</div>
+                    <div class="text-rose-300 text-sm hidden" data-lang="ua">15 лютого 2023</div>
+                    <div class="text-rose-300 text-sm hidden" data-lang="ru">15 февраля 2023</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="py-20 bg-rose-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400" data-lang="en">Therapeutic Tools</h2>
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400 hidden" data-lang="ua">Терапевтичні інструменти</h2>
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400 hidden" data-lang="ru">Терапевтические инструменты</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="therapy-card bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-rose-300 text-4xl mb-4">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-4 text-rose-400">EMDR</h3>
+                    <p class="text-gray-600" data-lang="en">
+                        Eye Movement Desensitization and Reprocessing helps process traumatic memories and reduce their lingering effects.
+                    </p>
+                    <p class="text-gray-600 hidden" data-lang="ua">
+                        Десенсибілізація та переробка рухами очей допомагає обробляти травматичні спогади та зменшувати їхні тривалі наслідки.
+                    </p>
+                    <p class="text-gray-600 hidden" data-lang="ru">
+                        Десенсибилизация и переработка движениями глаз помогает обрабатывать травматические воспоминания и уменьшать их долговременные последствия.
+                    </p>
+                </div>
+                
+                <div class="therapy-card bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-rose-300 text-4xl mb-4">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-4 text-rose-400">imTT</h3>
+                    <p class="text-gray-600" data-lang="en">
+                        Imagery Transformation Therapy uses guided visualization to reshape negative self-perceptions at their core.
+                    </p>
+                    <p class="text-gray-600 hidden" data-lang="ua">
+                        Терапія трансформації образів використовує керовану візуалізацію для перетворення негативних самосприйняттів на основному рівні.
+                    </p>
+                    <p class="text-gray-600 hidden" data-lang="ru">
+                        Терапия трансформации образов использует управляемую визуализацию для преобразования негативных самоощущений на глубинном уровне.
+                    </p>
+                </div>
+                
+                <div class="therapy-card bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-rose-300 text-4xl mb-4">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-4 text-rose-400" data-lang="en">Transformational Games</h3>
+                    <h3 class="text-xl font-serif mb-4 text-rose-400 hidden" data-lang="ua">Трансформаційні ігри</h3>
+                    <h3 class="text-xl font-serif mb-4 text-rose-400 hidden" data-lang="ru">Трансформационные игры</h3>
+                    <p class="text-gray-600" data-lang="en">
+                        Playful yet profound tools that reveal unconscious patterns and open new perspectives.
+                    </p>
+                    <p class="text-gray-600 hidden" data-lang="ua">
+                        Жваві, але глибокі інструменти, які розкривають несвідомі моделі та відкривають нові перспективи.
+                    </p>
+                    <p class="text-gray-600 hidden" data-lang="ru">
+                        Оживлённые, но глубокие инструменты, которые раскрывают бессознательные модели и открывают новые перспективы.
+                    </p>
+                </div>
+                
+                <div class="therapy-card bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-rose-300 text-4xl mb-4">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h3 class="text-xl font-serif mb-4 text-rose-400">MAC Cards</h3>
+                    <p class="text-gray-600" data-lang="en">
+                        Metaphorical Association Cards facilitate self-discovery through intuitive image selection and reflection.
+                    </p>
+                    <p class="text-gray-600 hidden" data-lang="ua">
+                        Метафоричні асоціативні картки сприяють самопізнанню через інтуїтивний вибір образів та рефлексію.
+                    </p>
+                    <p class="text-gray-600 hidden" data-lang="ru">
+                        Метафорические ассоциативные карты способствуют самопознанию через интуитивный выбор образов и рефлексию.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400" data-lang="en">Client Experiences</h2>
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400 hidden" data-lang="ua">Досвід клієнтів</h2>
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400 hidden" data-lang="ru">Опыт клиентов</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="review-card bg-rose-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-rose-200 flex items-center justify-center text-rose-500 mr-4">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-rose-400">Anna K.</h4>
+                            <div class="text-rose-300 text-sm" data-lang="en">12 sessions</div>
+                            <div class="text-rose-300 text-sm hidden" data-lang="ua">12 сесій</div>
+                            <div class="text-rose-300 text-sm hidden" data-lang="ru">12 сессий</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic" data-lang="en">
+                        "Working with Lesia changed my relationship with my body. For the first time in 30 years, I feel at home in myself. The shame that haunted me since childhood has lost its power."
+                    </p>
+                    <p class="text-gray-600 italic hidden" data-lang="ua">
+                        "Робота з Лесею змінила мої стосунки з моїм тілом. Вперше за 30 років я почуваюся як вдома в собі. Сором, який переслідував мене з дитинства, втратив свою силу."
+                    </p>
+                    <p class="text-gray-600 italic hidden" data-lang="ru">
+                        "Работа с Лесей изменила мои отношения с моим телом. Впервые за 30 лет я чувствую себя как дома в себе. Стыд, который преследовал меня с детства, потерял свою силу."
+                    </p>
+                </div>
+                
+                <div class="review-card bg-rose-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-rose-200 flex items-center justify-center text-rose-500 mr-4">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-rose-400">Mark T.</h4>
+                            <div class="text-rose-300 text-sm" data-lang="en">8 sessions</div>
+                            <div class="text-rose-300 text-sm hidden" data-lang="ua">8 сесій</div>
+                            <div class="text-rose-300 text-sm hidden" data-lang="ru">8 сессий</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic" data-lang="en">
+                        "The EMDR sessions helped me process childhood trauma that traditional therapy couldn't touch. Lesia's gentle yet precise approach made me feel safe enough to finally heal."
+                    </p>
+                    <p class="text-gray-600 italic hidden" data-lang="ua">
+                        "Сесії EMDR допомогли мені обробити дитячу травму, до якої традиційна терапія не могла доторкнутися. Ніжний, але точний підхід Лесі змусив мене почуватися достатньо безпечно, щоб нарешті одужати."
+                    </p>
+                    <p class="text-gray-600 italic hidden" data-lang="ru">
+                        "Сессии EMDR помогли мне переработать детскую травму, до которой традиционная терапия не могла подступиться. Мягкий, но точный подход Леси заставил меня почувствовать себя достаточно безопасно, чтобы наконец исцелиться."
+                    </p>
+                </div>
+                
+                <div class="review-card bg-rose-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-rose-200 flex items-center justify-center text-rose-500 mr-4">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-rose-400">Olena S.</h4>
+                            <div class="text-rose-300 text-sm" data-lang="en">Couple therapy</div>
+                            <div class="text-rose-300 text-sm hidden" data-lang="ua">Парна терапія</div>
+                            <div class="text-rose-300 text-sm hidden" data-lang="ru">Парная терапия</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic" data-lang="en">
+                        "After just three sessions with Lesia, my partner and I rediscovered intimacy we thought was lost forever. She has a magical way of helping people speak their truth without fear."
+                    </p>
+                    <p class="text-gray-600 italic hidden" data-lang="ua">
+                        "Після всього лише трьох сесій із Лесею ми з партнером знову відкрили інтимність, яку вважали назавжди втраченою. У неї є чарівний спосіб допомагати людям говорити свою правду без страху."
+                    </p>
+                    <p class="text-gray-600 italic hidden" data-lang="ru">
+                        "После всего трёх сессий с Лесей мы с партнёром вновь обрели интимность, которую считали навсегда утраченной. У неё есть волшебный способ помогать людям говорить свою правду без страха."
+                    </p>
+                </div>
+                
+                <div class="review-card bg-rose-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-rose-200 flex items-center justify-center text-rose-500 mr-4">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-rose-400">Ivan P.</h4>
+                            <div class="text-rose-300 text-sm" data-lang="en">Transformational games</div>
+                            <div class="text-rose-300 text-sm hidden" data-lang="ua">Трансформаційні ігри</div>
+                            <div class="text-rose-300 text-sm hidden" data-lang="ru">Трансформационные игры</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic" data-lang="en">
+                        "The transformational game revealed patterns in my relationships I'd never noticed. Lesia's insights were spot-on, and the changes have been remarkable. My whole family has noticed the difference."
+                    </p>
+                    <p class="text-gray-600 italic hidden" data-lang="ua">
+                        "Трансформаційна гра виявила моделі в моїх стосунках, які я ніколи не помічав. Інсайти Лесі були точними, а зміни були вражаючими. Вся моя родина помітила різницю."
+                    </p>
+                    <p class="text-gray-600 italic hidden" data-lang="ru">
+                        "Трансформационная игра выявила модели в моих отношениях, которые я никогда не замечал. Инсайты Леси были точными, а изменения оказались поразительными. Вся моя семья заметила разницу."
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto">
+                <h3 class="text-xl font-serif mb-6 text-center text-rose-400" data-lang="en">Share Your Experience</h3>
+                <h3 class="text-xl font-serif mb-6 text-center text-rose-400 hidden" data-lang="ua">Поділіться своїм досвідом</h3>
+                <h3 class="text-xl font-serif mb-6 text-center text-rose-400 hidden" data-lang="ru">Поделитесь своим опытом</h3>
+                
+               <form class="space-y-4" action="http://31.207.76.40:8000/feedback" method="POST">
+    <div>
+        <label class="block text-gray-600 mb-2" data-lang="en">Your name</label>
+        <label class="block text-gray-600 mb-2 hidden" data-lang="ua">Ваше ім'я</label>
+        <label class="block text-gray-600 mb-2 hidden" data-lang="ru">Ваше имя</label>
+        <input name="name" type="text" class="w-full px-4 py-2 border border-rose-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-300">
+    </div>
+    
+    <div>
+        <label class="block text-gray-600 mb-2" data-lang="en">Number of sessions</label>
+        <label class="block text-gray-600 mb-2 hidden" data-lang="ua">Кількість сесій</label>
+        <label class="block text-gray-600 mb-2 hidden" data-lang="ru">Количество сессий</label>
+        <input name="sessions" type="text" class="w-full px-4 py-2 border border-rose-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-300">
+    </div>
+    
+    <div>
+        <label class="block text-gray-600 mb-2" data-lang="en">Your review</label>
+        <label class="block text-gray-600 mb-2 hidden" data-lang="ua">Ваш відгук</label>
+        <label class="block text-gray-600 mb-2 hidden" data-lang="ru">Ваш отзыв</label>
+        <textarea name="review" rows="4" class="w-full px-4 py-2 border border-rose-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-300"></textarea>
+    </div>
+    
+    <button type="submit" class="bg-rose-300 hover:bg-rose-400 text-white px-6 py-2 rounded-full transition duration-300">
+        <span data-lang="en">Submit</span>
+        <span class="hidden" data-lang="ua">Надіслати</span>
+        <span class="hidden" data-lang="ru">Отправить</span>
+    </button>
+</form>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-rose-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400" data-lang="en">Let's Connect</h2>
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400 hidden" data-lang="ua">Давайте спілкуватися</h2>
+            <h2 class="text-3xl font-serif text-center mb-12 text-rose-400 hidden" data-lang="ru">Давайте общаться</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-serif mb-6 text-rose-400" data-lang="en">Contact Information</h3>
+                        <h3 class="text-xl font-serif mb-6 text-rose-400 hidden" data-lang="ua">Контактна інформація</h3>
+                        <h3 class="text-xl font-serif mb-6 text-rose-400 hidden" data-lang="ru">Контактная информация</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="text-rose-300 mr-4">
+                                    <i class="fab fa-telegram text-2xl"></i>
+                                </div>
+                                <div>
+                                    <div class="text-gray-500 text-sm">Telegram</div>
+                                    <div class="text-gray-700">@LesiaFoxxx</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="text-rose-300 mr-4">
+                                    <i class="fab fa-instagram text-2xl"></i>
+                                </div>
+                                <div>
+                                    <div class="text-gray-500 text-sm">Instagram</div>
+                                    <div class="text-gray-700">@lesia.emdr_</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-lg font-serif mb-4 text-rose-400" data-lang="en">Session Booking</h4>
+                            <h4 class="text-lg font-serif mb-4 text-rose-400 hidden" data-lang="ua">Запис на сесію</h4>
+                            <h4 class="text-lg font-serif mb-4 text-rose-400 hidden" data-lang="ru">Запись на сессию</h4>
+                            
+                            <p class="text-gray-600 mb-4" data-lang="en">
+                                Sessions available online via secure video platform or in-person.
+                            </p>
+                            <p class="text-gray-600 mb-4 hidden" data-lang="ua">
+                                Сесії доступні онлайн через безпечну відеоплатформу або особисто.
+                            </p>
+                            <p class="text-gray-600 mb-4 hidden" data-lang="ru">
+                                Сессии доступны онлайн через безопасную видеоплатформу или лично.
+                            </p>
+                            
+                            <a href="https://t.me/LesiaFoxxx" target="_blank" class="bg-rose-300 hover:bg-rose-400 text-white px-6 py-2 rounded-full transition duration-300 inline-block">
+                                <span data-lang="en">Book a session</span>
+                                <span class="hidden" data-lang="ua">Записатися на сесію</span>
+                                <span class="hidden" data-lang="ru">Записаться на сессию</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-serif mb-6 text-rose-400" data-lang="en">Ask Yourself a Question</h3>
+                        <h3 class="text-xl font-serif mb-6 text-rose-400 hidden" data-lang="ua">Задайте собі питання</h3>
+                        <h3 class="text-xl font-serif mb-6 text-rose-400 hidden" data-lang="ru">Задайте себе вопрос</h3>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="question-option cursor-pointer p-4 border border-rose-100 rounded-lg" onclick="showAnswer(1)">
+                                <h4 class="text-rose-400" data-lang="en">How can I be kinder to myself today?</h4>
+                                <h4 class="text-rose-400 hidden" data-lang="ua">Як я можу бути добрішим до себе сьогодні?</h4>
+                                <h4 class="text-rose-400 hidden" data-lang="ru">Как я могу быть добрее к себе сегодня?</h4>
+                            </div>
+                            
+                            <div class="question-option cursor-pointer p-4 border border-rose-100 rounded-lg" onclick="showAnswer(2)">
+                                <h4 class="text-rose-400" data-lang="en">What emotion am I avoiding right now?</h4>
+                                <h4 class="text-rose-400 hidden" data-lang="ua">Яку емоцію я зараз уникаю?</h4>
+                                <h4 class="text-rose-400 hidden" data-lang="ru">Какую эмоцию я сейчас избегаю?</h4>
+                            </div>
+                            
+                            <div class="question-option cursor-pointer p-4 border border-rose-100 rounded-lg" onclick="showAnswer(3)">
+                                <h4 class="text-rose-400" data-lang="en">Where in my body do I feel tension?</h4>
+                                <h4 class="text-rose-400 hidden" data-lang="ua">Де в моєму тілі я відчуваю напругу?</h4>
+                                <h4 class="text-rose-400 hidden" data-lang="ru">Где в моём теле я чувствую напряжение?</h4>
+                            </div>
+                            
+                            <div class="question-option cursor-pointer p-4 border border-rose-100 rounded-lg" onclick="showAnswer(4)">
+                                <h4 class="text-rose-400" data-lang="en">What do I need to feel safe?</h4>
+                                <h4 class="text-rose-400 hidden" data-lang="ua">Що мені потрібно, щоб почуватися в безпеці?</h4>
+                                <h4 class="text-rose-400 hidden" data-lang="ru">Что мне нужно, чтобы чувствовать себя в безопасности?</h4>
+                            </div>
+                        </div>
+                        
+                        <div id="answer-container" class="hidden bg-rose-50 p-6 rounded-lg border-l-4 border-rose-300 fade-in">
+                            <p id="answer-text" class="italic text-gray-600"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8 border-t border-rose-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-2xl font-serif text-rose-300 mb-4 md:mb-0">Lesia Vasylievna</div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-rose-300">
+                        <i class="fab fa-telegram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-rose-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-rose-300">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-rose-100 text-center text-gray-500 text-sm">
+                <p data-lang="en">© 2023 Lesia Vasylievna. All rights reserved.</p>
+                <p class="hidden" data-lang="ua">© 2023 Леся Василівна. Усі права захищені.</p>
+                <p class="hidden" data-lang="ru">© 2023 Леся Васильевна. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Hide all language-specific elements
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.add('hidden');
+            });
+            
+            // Show elements for selected language
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.classList.remove('hidden');
+            });
+            
+            // Update active language button
+            document.querySelectorAll('.language-switcher').forEach(btn => {
+                btn.classList.remove('bg-rose-300', 'text-white');
+                btn.classList.add('bg-rose-100', 'text-rose-400');
+            });
+            
+            // Highlight current language button
+            const currentLangBtn = Array.from(document.querySelectorAll('.language-switcher')).find(btn => {
+                return btn.textContent.trim().toUpperCase() === lang.toUpperCase();
+            });
+            
+            if (currentLangBtn) {
+                currentLangBtn.classList.remove('bg-rose-100', 'text-rose-400');
+                currentLangBtn.classList.add('bg-rose-300', 'text-white');
+            }
+        }
+        
+        // Initialize with English
+        changeLanguage('en');
+        
+        // Question and answer functionality
+        const answers = {
+            en: {
+                1: "Start by noticing your inner critic. When you hear negative self-talk, pause and ask: 'Would I speak this way to a dear friend?' Offer yourself the same compassion.",
+                2: "Resistance often points to important work. Try gently naming what you feel without judgment. Simply saying 'I notice I'm avoiding...' can create space for the emotion to exist.",
+                3: "Bring gentle awareness to that area. Imagine breathing into it. Your body holds wisdom—this tension may be asking for movement, rest, or simply acknowledgment.",
+                4: "Safety begins with self-permission. You might need boundaries, a quiet moment, or to honor a neglected need. Listen deeply—your intuition knows."
+            },
+            ua: {
+                1: "Почніть із того, щоб помічати свого внутрішнього критика. Коли ви чуєте негативний внутрішній діалог, зупиніться і запитайте: «Чи говорив би я так з дорогим другом?» Пропонуйте собі таку саму співчутливість.",
+                2: "Опір часто вказує на важливу роботу. Спробуйте ніжно назвати те, що ви відчуваєте, без осуду. Просто сказати «Я помічаю, що уникаю...» може створити простір для того, щоб емоція існувала.",
+                3: "Направте ніжну увагу на цю область. Уявіть, що ви дихаєте в неї. Ваше тіло містить мудрість — ця напруга може просити руху, відпочинку або просто визнання.",
+                4: "Безпека починається з дозволу собі. Вам можуть знадобитися межі, тиха хвилина або шанування нехтуваної потреби. Слухайте глибоко — ваша інтуїція знає."
+            },
+            ru: {
+                1: "Начните с того, чтобы замечать своего внутреннего критика. Когда вы слышите негативный внутренний диалог, остановитесь и спросите: «Стал бы я так говорить с дорогим другом?» Предложите себе такое же сострадание.",
+                2: "Сопротивление часто указывает на важную работу. Попробуйте мягко назвать то, что вы чувствуете, без осуждения. Просто сказать «Я замечаю, что избегаю...» может создать пространство для того, чтобы эмоция существовала.",
+                3: "Направьте мягкое внимание на эту область. Представьте, что вы дышите в неё. Ваше тело содержит мудрость — это напряжение может просить движения, отдыха или просто признания.",
+                4: "Безопасность начинается с разрешения себе. Вам могут понадобиться границы, тихая минута или почтение неудовлетворённой потребности. Слушайте глубоко — ваша интуиция знает."
+            }
+        };
+        
+        function showAnswer(questionId) {
+            const answerContainer = document.getElementById('answer-container');
+            const answerText = document.getElementById('answer-text');
+            
+            // Get current language
+            let currentLang = 'en';
+            document.querySelectorAll('.language-switcher').forEach(btn => {
+                if (btn.classList.contains('bg-rose-300')) {
+                    currentLang = btn.textContent.trim().toLowerCase();
+                }
+            });
+            
+            answerText.textContent = answers[currentLang][questionId];
+            answerContainer.classList.remove('hidden');
+            answerContainer.classList.add('fade-in');
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
